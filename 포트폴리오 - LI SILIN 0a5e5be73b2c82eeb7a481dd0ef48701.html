@@ -1,0 +1,830 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>포트폴리오 - LI SILIN</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="0a5e5be7-3b2c-82ee-b7a4-81dd0ef48701" class="page sans"><header><img class="page-cover-image" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4.png" style="object-position:center 50%"/><h1 class="page-title" dir="auto">포트폴리오 - LI SILIN</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="/icons/light-bulb_lightgray.svg" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="79ce5be7-3b2c-8287-9f6b-81eca4b31ec1" dir="ltr"><div style="font-size:1.5em"><img class="icon notion-static-icon" src="https://app.notion.com/icons/light-bulb_lightgray.svg"/></div><div style="width:100%"><ul id="6b0e5be7-3b2c-8369-aae5-810db82c2066" class="bulleted-list" dir="auto"><li style="list-style-type:disc">중국어 원어민 | 한국어 TOPIK 6급 | 영어 독해 및 대화 가능</li></ul><ul id="3d8e5be7-3b2c-80bb-894e-c14257bd4cbb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">SNS 플랫폼 운영 (X, 웨이보)</li></ul><ul id="3d8e5be7-3b2c-8055-b1a0-ca2b525da00a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">아이돌 콘텐츠 기획·제작</li></ul><ul id="3e1e5be7-3b2c-8050-a693-d2da44f7306c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">DSLR 활용, 지엔영, Photoshop 등 다양한 편집 툴 활용</li></ul><ul id="3e1e5be7-3b2c-80a5-944d-e3c6d3e82383" class="bulleted-list" dir="auto"><li style="list-style-type:disc">K-POP 팬 이벤트 기획·운영</li></ul><ul id="3d8e5be7-3b2c-80f8-873d-d48397601471" class="bulleted-list" dir="auto"><li style="list-style-type:disc">한·중 이용자 트렌드 분석</li></ul></div></aside><div id="704e5be7-3b2c-83d6-aebb-814c43b1d911" class="column-list" data-notion-column-list="" dir="auto"><div id="9a1e5be7-3b2c-820f-82e5-013a47db5a99" style="width:25%" class="column" data-notion-column-ratio="0.25" dir="auto"><figure id="f7ae5be7-3b2c-82e3-a8ce-817f43558e7d" class="image" style="text-align:left" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_5686.jpg" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_5686.jpg"><img style="width:144px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_5686.jpg"/></a></figure><p id="b9ce5be7-3b2c-82b6-8ebe-81534cbf05c2" class="" dir="auto">
+</p></div><div id="a47e5be7-3b2c-822b-839f-018f18315dd9" style="width:75%" class="column" data-notion-column-ratio="0.75" dir="auto"><h1 id="111e5be7-3b2c-83cb-855a-01bfa5512f34" class="block-color-gray" data-notion-highlight="gray" dir="auto">LI SILIN 이사림</h1><p id="e3ee5be7-3b2c-827a-854c-01fc8296a370" class="" dir="auto">안녕하세요. </p><p id="3d8e5be7-3b2c-80c6-81cf-c8aaad4ed6b3" class="" dir="auto">팬덤의 반응에서 인사이트를 발견하고, 트렌드를 콘텐츠와 마케팅으로 연결하는 사람입니다.</p><p id="3d8e5be7-3b2c-804c-afd9-d39c37454a5c" class="" dir="auto">K-POP 팬 경험과 SNS 콘텐츠 운영 경험을 바탕으로 아티스트와 팬을 연결하는 마케팅을 만들어 갑니다.</p><p id="3d8e5be7-3b2c-8002-a010-c3150a14085d" class="" dir="auto">감사합니다.</p><p id="93be5be7-3b2c-8247-b22a-81d515816e9a" class="" dir="auto">
+</p></div></div><hr id="22fe5be7-3b2c-83ce-b68e-81d3743ae88e" dir="auto"/><div id="7b6e5be7-3b2c-8207-9daf-81b0ac44286f" class="column-list" data-notion-column-list="" dir="auto"><div id="c6be5be7-3b2c-82de-850e-81c52439e427" style="width:56.25%" class="column" data-notion-column-ratio="0.5625" dir="auto"><h1 id="c74e5be7-3b2c-83ea-8b1b-81340d3e41b6" class="block-color-gray" data-notion-highlight="gray" dir="auto">연락처</h1><p id="1e6e5be7-3b2c-82a4-8f3f-81f1541ef7c4" class="" dir="auto">T : 010-8070-8255</p><p id="f11e5be7-3b2c-8242-a2d0-017a89129e83" class="" dir="auto">A : 서울특별시 서대문구</p><p id="d52e5be7-3b2c-83af-8317-816acbe65064" class="" dir="auto">E : lisl000709@gmail.com</p><p id="358e5be7-3b2c-8332-819e-010be81186e0" class="" dir="auto">
+</p><h1 id="4dce5be7-3b2c-83cd-bb4d-0160ecb2133e" class="block-color-gray" data-notion-highlight="gray" dir="auto">교육</h1><p id="c22e5be7-3b2c-827b-a5cb-811ab971084b" class="" dir="auto">2023.09 - 2027.02</p><p id="e26e5be7-3b2c-8212-9f12-01ece5d12177" class="" dir="auto">이화여자대학교 ⎜ 커뮤니케이션·미디어학과</p><p id="866e5be7-3b2c-83ca-a97a-01032a72dbb0" class="" dir="auto">학점 : 3.27 / 4.3</p><p id="f19e5be7-3b2c-8327-b43b-81f8a8d49f83" class="" dir="auto">
+</p><p id="fdce5be7-3b2c-82f9-80d1-0118a8c34a2c" class="" dir="auto">2018.09 - 2022.06</p><p id="a5be5be7-3b2c-829e-acf6-8145449a70da" class="" dir="auto">중국 헤이룽장대학교 | 중어중문학</p><p id="3d8e5be7-3b2c-8029-97d1-e8b8cbf27d14" class="" dir="auto">학점 : 8.229 / 10</p><p id="3d8e5be7-3b2c-80cf-a1a6-e43c9ca70783" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-805e-bc64-e4456809746e" class="" dir="auto">2015.09 - 2018.06</p><p id="3d8e5be7-3b2c-8043-a6a3-cb6e6c71d5c5" class="" dir="auto">중국 헤이룽장성 목단강시 제2고등학교 | 인문게열</p><p id="3d8e5be7-3b2c-801c-8884-fbd3855bae0c" class="" dir="auto">
+</p><h1 id="360e5be7-3b2c-831c-aa47-818ea20295e0" class="block-color-gray" data-notion-highlight="gray" dir="auto">언어</h1><p id="c42e5be7-3b2c-82ae-8fc8-814fecd24937" class="" dir="auto">중국어    - ★★★★★</p><p id="4cae5be7-3b2c-8316-ab7c-01007dc1fded" class="" dir="auto">한국어    - ★★★★★</p><p id="3bde5be7-3b2c-83b7-af17-01fd4d107e53" class="" dir="auto">영어       - ★★★☆☆</p><p id="baee5be7-3b2c-827d-9ab4-01e17b0a48c1" class="" dir="auto">
+</p></div><div id="b74e5be7-3b2c-833b-beeb-010126442261" style="width:93.74999999999997%" class="column" data-notion-column-ratio="0.9374999999999998" dir="auto"><h1 id="c99e5be7-3b2c-836b-bc61-81e2fb649771" class="block-color-gray" data-notion-highlight="gray" dir="auto">경력</h1><p id="317e5be7-3b2c-8257-88c5-81b06e48f9e5" class="" dir="auto">2026.04 - 현재</p><p id="163e5be7-3b2c-8314-988b-0104182c4072" class="" dir="auto">Sina Weibo (웨이보)⎜ K-POP 공식 계정 운영</p><ul id="cf1e5be7-3b2c-82b4-872c-81453bf9b2ba" class="bulleted-list" dir="auto"><li style="list-style-type:disc">한국 연예·K-POP 관련 최신 이슈 데일리 모니터링</li></ul><ul id="c98e5be7-3b2c-8295-8ca4-8148b8d5dd18" class="bulleted-list" dir="auto"><li style="list-style-type:disc">K-POP 콘텐츠의 중국어 콘텐츠 작성 및 현지화</li></ul><ul id="3d8e5be7-3b2c-80ca-9943-e3118472c7ae" class="bulleted-list" dir="auto"><li style="list-style-type:disc">웨이보 공식 채널 콘텐츠 편집 및 게시</li></ul><ul id="3d8e5be7-3b2c-80c6-984a-e571bb62eccb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">중국 SNS 이용자 반응 및 콘텐츠 트렌드 모니터링</li></ul><ul id="3d8e5be7-3b2c-8076-96a4-df25676867d0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">직접 기획한 콘텐츠 키워드가 웨이보 실시간 트렌드 순위 총 52회 진입, 인턴 기간 동안 1, 500건 이상의 게시물 작성·게시</li></ul><p id="3d8e5be7-3b2c-80a1-b560-cf059966c65e" class="" dir="auto">
+</p><p id="500e5be7-3b2c-8373-806b-012ddb292988" class="" dir="auto">2023.11 - 현재</p><p id="da1e5be7-3b2c-8240-8fae-817a8dc74da2" class="" dir="auto">X ⎜ K-POP 콘텐츠 제작 및 SNS 운영</p><ul id="f08e5be7-3b2c-8204-ac08-81a5d2c9a0c4" class="bulleted-list" dir="auto"><li style="list-style-type:disc">타깃 이용자 관심사 및 SNS 트렌드 기반 콘텐츠 소재 발굴</li></ul><ul id="3d8e5be7-3b2c-80b6-88b3-f4ec28e5abbb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">아이돌 영상·사진 직접 카메라 촬영 및 편집</li></ul><ul id="47ce5be7-3b2c-83bc-8513-014f420f8dac" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Photoshop, Final Cut Pro, CapCut 활용한 이미지 영상 콘텐츠 제작</li></ul><ul id="e45e5be7-3b2c-8225-8fab-019dff720afb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">콘텐츠 이용자 반응 및 트렌드 모니터링</li></ul><p id="3d8e5be7-3b2c-80b4-8ac4-ffa45b2c2c35" class="" dir="auto">
+</p><p id="d1ae5be7-3b2c-83be-993a-81a281c12cc9" class="" dir="auto">2023.04 - 2024.09</p><p id="3d8e5be7-3b2c-80d4-9052-cbe372c98f7f" class="" dir="auto">중국어 콘텐츠 현지화</p><ul id="38ee5be7-3b2c-8224-81e0-015c892b6e37" class="bulleted-list" dir="auto"><li style="list-style-type:disc">한국어 K-POP 콘텐츠 중국어 번역 및 현지화</li></ul><ul id="3d8e5be7-3b2c-80a1-9a6d-fff1603b09ab" class="bulleted-list" dir="auto"><li style="list-style-type:disc">중국 이용자의 언어·문화적 특성을 고려한 표현 및 메시지 재구성</li></ul><ul id="3d8e5be7-3b2c-805d-bcd6-c2d78c2d8d4d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">한국어와 중국어 간 콘텐츠의 의미 및 뉘앙스 조정</li></ul><ul id="3d8e5be7-3b2c-8010-9d45-e95fac769ff4" class="bulleted-list" dir="auto"><li style="list-style-type:disc">50건 이상, 총 약 900분 분량의 콘텐츠 번약 </li></ul><p id="2b3e5be7-3b2c-8324-a33f-015791e1c63c" class="" dir="auto">
+</p><h1 id="919e5be7-3b2c-82f3-8dfa-81ced9d28422" class="block-color-gray" data-notion-highlight="gray" dir="auto">자격증</h1><details id="dd9e5be7-3b2c-8202-ab08-81bfdedd21f1" open="" class="toggle" dir="auto"><summary>2025.07.13 <strong>TOPIK II (PBT) 6급</strong></summary><div class="indented"><p id="da2e5be7-3b2c-82b2-bc0d-81a761fdcbe4" class="" dir="auto">(자격증 이미지를 넣으세요)</p></div></details></div></div><hr id="a3ce5be7-3b2c-83f6-8198-0113f2f7222c" dir="auto"/><h1 id="ae4e5be7-3b2c-830e-bdae-816bf7cbe372" class="block-color-gray" data-notion-highlight="gray" dir="auto">스킬</h1><div id="82be5be7-3b2c-8375-bbf8-013e7e6fa88b" class="collection-content" dir="ltr"><h4 class="collection-title">스킬</h4><div class="collection-content-wrapper"><table class="collection-content"><colgroup><col style="width:41.17647058823529%"/><col style="width:29.411764705882355%"/><col style="width:29.411764705882348%"/></colgroup><thead><tr><th><span class="icon property-icon"><img src="https://app.notion.com/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>이름</th><th><span class="icon property-icon"><img src="https://app.notion.com/icons/arrow-circle-down_gray.svg" style="width:14px;height:14px;display:block"/></span>선택</th><th><span class="icon property-icon"><img src="https://app.notion.com/icons/checklist_gray.svg" style="width:14px;height:14px;display:block"/></span>역량</th></tr></thead><tbody><tr id="427e5be7-3b2c-827e-a653-8156f369bd62"><td class="cell-title"><a href="https://app.notion.com/p/Excel-427e5be73b2c827ea6538156f369bd62?pvs=21" data-notion-page-id="427e5be7-3b2c-827e-a653-8156f369bd62" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/Excel/Excel.png"/>Excel</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★★★</span></td><td class="cell-Mann">데이터 관리, 차트 제작</td></tr><tr id="df2e5be7-3b2c-837b-a593-8113378305a9"><td class="cell-title"><a href="https://app.notion.com/p/Powerpoint-df2e5be73b2c837ba5938113378305a9?pvs=21" data-notion-page-id="df2e5be7-3b2c-837b-a593-8113378305a9" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/Powerpoint/Powerpoint.png"/>Powerpoint</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★★★</span></td><td class="cell-Mann">프레젠테이션 제작</td></tr><tr id="aa1e5be7-3b2c-8271-bf3b-011c56bf76e8"><td class="cell-title"><a href="https://app.notion.com/p/Photoshop-aa1e5be73b2c8271bf3b011c56bf76e8?pvs=21" data-notion-page-id="aa1e5be7-3b2c-8271-bf3b-011c56bf76e8" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/Photoshop/Ps.png"/>Photoshop</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★★☆</span></td><td class="cell-Mann">이미지 편집, 누끼, 이미지 벨런싱, AI활용</td></tr><tr id="3d8e5be7-3b2c-8082-9d49-fa4bd005b8cf"><td class="cell-title"><a href="https://app.notion.com/p/CapCut-3d8e5be73b2c80829d49fa4bd005b8cf?pvs=21" data-notion-page-id="3d8e5be7-3b2c-8082-9d49-fa4bd005b8cf" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/CapCut/IMG_5972.png"/>CapCut</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★★★</span></td><td class="cell-Mann">사진 및 동영상 에디터</td></tr><tr id="3d8e5be7-3b2c-8022-b57a-e369b363d747"><td class="cell-title"><a href="https://app.notion.com/p/Lightroom-3d8e5be73b2c8022b57ae369b363d747?pvs=21" data-notion-page-id="3d8e5be7-3b2c-8022-b57a-e369b363d747" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/Lightroom/IMG_5976.png"/>Lightroom</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★★★</span></td><td class="cell-Mann">사진 비디오 편집</td></tr><tr id="501e5be7-3b2c-8299-a764-81c2ab4182c5"><td class="cell-title"><a href="https://app.notion.com/p/Canva-501e5be73b2c8299a76481c2ab4182c5?pvs=21" data-notion-page-id="501e5be7-3b2c-8299-a764-81c2ab4182c5" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/Canva/Canva.png"/>Canva</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★★☆</span></td><td class="cell-Mann">발표자료 디자인, 브랜드 디자인</td></tr><tr id="a91e5be7-3b2c-8322-8ecd-8146cb304039"><td class="cell-title"><a href="https://app.notion.com/p/Final-Cut-Pro-a91e5be73b2c83228ecd8146cb304039?pvs=21" data-notion-page-id="a91e5be7-3b2c-8322-8ecd-8146cb304039" data-notion-space-id="23ce5be7-3b2c-8176-b23c-0003833edc3b"><img class="icon" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/%EC%8A%A4%ED%82%AC/Final%20Cut%20Pro/IMG_5977.jpg"/>Final Cut Pro</a></td><td class="cell-L@Oh"><span class="selected-value select-value-color-default">★★★☆☆</span></td><td class="cell-Mann">영상 편집 및 제작</td></tr></tbody></table></div><br/><br/></div><hr id="8e5e5be7-3b2c-83ba-804a-810baef0e2ba" dir="auto"/><h1 id="3c0e5be7-3b2c-8398-a00d-81225a6ffdad" class="block-color-gray" data-notion-highlight="gray" dir="auto">프로젝트</h1><h2 id="3d8e5be7-3b2c-80fd-85a7-db807fcce122" class="" dir="auto">▶ Sina Weibo 웨이보 ｜ 한류 채널 공식 계정 운영</h2><figure id="3d8e5be7-3b2c-80bb-b5d3-fe92e114815a" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6068.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6068.heic"><img style="width:5404px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6068.heic"/></a></figure><h2 id="3d8e5be7-3b2c-80ac-9f71-ff88b5b1d8a7" class="block-color-gray" data-notion-highlight="gray" dir="auto"><strong>TREND TO IMPACT </strong></h2><p id="3d8e5be7-3b2c-8072-a347-e2922be49974" class="" dir="auto"><strong>실시간 K-POP 트렌드를 콘텐츠 성과로 연결하다</strong></p><ul id="3d8e5be7-3b2c-80f7-868f-d03d151818e4" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default">기획한 콘텐츠 키워드가 웨이보 실시간 트렌드 순위 총 52회 진입하기 (본인 기여도 100%)</mark></li></ul><div id="3d8e5be7-3b2c-80a8-b7c7-c721bffc0b4d" class="column-list" data-notion-column-list="" dir="auto"><div id="3d8e5be7-3b2c-80c6-a17a-d71ef0095069" style="width:56.25%" class="column" data-notion-column-ratio="0.5625" dir="auto"><figure id="58ee5be7-3b2c-83f0-91c1-81c7af2dad56" class="image" style="text-align:left" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6710.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6710.heic"><img style="width:288px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6710.heic"/></a></figure></div><div id="3d8e5be7-3b2c-8005-9885-d2d295fdff93" style="width:43.75000000000004%" class="column" data-notion-column-ratio="0.43750000000000044" dir="auto"><p id="3d8e5be7-3b2c-80fe-b268-f405695d2a0f" class="" dir="auto">
+</p><h2 id="3d8e5be7-3b2c-80fa-9d62-d5697530cd61" class="block-color-gray" data-notion-highlight="gray" dir="auto">KEY POINTS</h2><p id="3d8e5be7-3b2c-808d-a00a-e49d19e50712" class="" dir="auto"><strong>01｜TREND MONITORING</strong></p><p id="3d8e5be7-3b2c-8050-91cb-fe7adf01b272" class="" dir="auto">실시간 K-POP 이슈와 중국 이용자 반응을 모니터링하며 화제성 높은 콘텐츠 소재를 빠르게 발굴</p><p id="3d8e5be7-3b2c-801e-aae1-fefd2e35e55c" class="" dir="auto"><strong>02｜CONTENT STRATEGY</strong></p><p id="3d8e5be7-3b2c-80fc-804e-cda24d9764c4" class="" dir="auto">팬덤 관심도와 이용자 반응을 바탕으로 콘텐츠 키워드를 기획하고 중국 이용자 관점에 맞게 현지화</p><p id="3d8e5be7-3b2c-80f3-9d7b-d13414efd951" class="" dir="auto"><strong>03｜PERFORMANCE</strong></p><p id="3d8e5be7-3b2c-805d-9678-f4881008ed4a" class="" dir="auto">직접 기획한 콘텐츠 키워드 <strong>웨이보 실시간 트렌드 총 52회 진입</strong></p><p id="3d8e5be7-3b2c-80d9-81bd-f53d17b5363c" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-80c9-b2ef-c82af0559612" class="" dir="auto">
+</p></div></div><h2 id="3d8e5be7-3b2c-8026-985e-e0718d81e03a" class="block-color-gray" data-notion-highlight="gray" dir="auto"><strong>CONTENT OPERATION</strong></h2><p id="3d8e5be7-3b2c-808d-86a3-c86a39f9ffcc" class="" dir="auto"><strong>기획부터 제작·게시까지, 콘텐츠 전 과정 직접 운영</strong></p><ul id="3d8e5be7-3b2c-8030-a71a-fdb82e3a16f2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">인턴 기간 동안 1, 500건 이상 게시물 발행 (본인 기여도 100%)</li></ul><div id="3d8e5be7-3b2c-80fb-a596-c68aa6241b2a" class="column-list" data-notion-column-list="" dir="auto"><div id="3d8e5be7-3b2c-8070-aec2-c812917b6d6b" style="width:56.25%" class="column" data-notion-column-ratio="0.5625" dir="auto"><figure id="3d8e5be7-3b2c-807b-ade5-cfe1ae7c62b5" class="image" style="text-align:left" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6069.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6069.heic"><img style="width:432px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6069.heic"/></a></figure></div><div id="3d8e5be7-3b2c-8056-bb33-c186a3467b3b" style="width:43.75%" class="column" data-notion-column-ratio="0.4375" dir="auto"><p id="3d8e5be7-3b2c-8080-a066-f2306c929b44" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-809e-a233-e3b7eeb81c2f" class="" dir="auto">
+</p><h2 id="3d8e5be7-3b2c-8000-8fe7-c47f08828cc1" class="block-color-gray" data-notion-highlight="gray" dir="auto">KEY POINTS</h2><p id="3d8e5be7-3b2c-8089-be53-eb9fc2bee606" class="" dir="auto"><strong>01｜ISSUE → CONTENT</strong></p><p id="3d8e5be7-3b2c-80f6-87b7-c62f82b7b0d6" class="" dir="auto">실시간 K-POP 이슈를 발굴하고, 콘텐츠 목적과 중국 이용자 관심도를 고려해 적합한 키워드와 소재를 선정</p><p id="3d8e5be7-3b2c-808a-be6a-f10ef209b2e0" class="" dir="auto"><strong>02｜100% CONTENT PRODUCTION</strong></p><p id="3d8e5be7-3b2c-8054-8d99-c70e6a878a9c" class="" dir="auto">키워드 선정부터 문안 작성, 이미지·영상 소싱 및 최종 게시까지 전 과정 직접 담당</p><p id="3d8e5be7-3b2c-8073-b15d-eb5c3677dc80" class="" dir="auto"><strong>03｜USER RESPONSE</strong></p><p id="3d8e5be7-3b2c-803a-a21c-f51be6f7d8f5" class="" dir="auto">콘텐츠별 이용자 반응을 확인하며 성과를 축적하고, <strong>최대 4,822 좋아요·304 댓글·155 공유</strong>를 기록</p><p id="3d8e5be7-3b2c-80d4-8f8c-ec21ef525070" class="" dir="auto">
+</p></div></div><hr id="3d9e5be7-3b2c-803c-ac20-d1cd4760bf86" dir="auto"/><p id="3d9e5be7-3b2c-80c3-9924-f909814a96e4" class="" dir="auto">
+</p><h2 id="3d8e5be7-3b2c-80f2-a8c9-c7fe7376c217" class="" dir="auto">▶ X ｜ K-POP 콘텐츠 제작 및 SNS 운영</h2><figure id="3d8e5be7-3b2c-80ad-aa21-ce6a9a1e7f19" class="image" style="text-align:left" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6093.jpg" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6093.jpg"><img style="width:240px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6093.jpg"/></a></figure><p id="3d8e5be7-3b2c-80ad-a008-c70ac4aea66f" class="" dir="auto"><a href="https://x.com/bringlight_0827?s=11">https://x.com/bringlight_0827?s=11</a></p><h2 id="3d8e5be7-3b2c-80b3-906d-fb0d391e56e3" class="block-color-gray" data-notion-highlight="gray" dir="auto"><strong>X CONTENT OPERATION</strong></h2><p id="3d8e5be7-3b2c-8054-a91f-d848a6d8fc70" class="" dir="auto"><strong>팬의 시선으로 트렌드를 읽고, 콘텐츠로 연결하다</strong></p><div id="3d8e5be7-3b2c-80c8-99d1-dfb498105f39" class="column-list" data-notion-column-list="" dir="auto"><div id="3d8e5be7-3b2c-8015-802c-f16fe4c8bcce" style="width:56.25%" class="column" data-notion-column-ratio="0.5625" dir="auto"><figure id="3d8e5be7-3b2c-80d8-b7e9-ea8146c205f2" class="image" style="text-align:left" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6099.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6099.heic"><img style="width:384px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6099.heic"/></a></figure><figure id="3e1e5be7-3b2c-80d5-a77f-f1e254ce992c" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6712.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6712.heic"><img style="width:1889px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6712.heic"/></a></figure></div><div id="3d8e5be7-3b2c-8066-bb3e-d4e763cbf030" style="width:43.75%" class="column" data-notion-column-ratio="0.4375" dir="auto"><h2 id="3d8e5be7-3b2c-8034-93b4-ff8a1dc1317f" class="block-color-gray" data-notion-highlight="gray" dir="auto">KEY POINTS</h2><p id="3d8e5be7-3b2c-80ac-8e78-d26b217ba173" class="" dir="auto"><strong>01｜SNS CHANNEL OPERATION</strong></p><p id="3d8e5be7-3b2c-80eb-bb64-f97f26eb0a45" class="" dir="auto">콘텐츠 기획부터 촬영·편집·게시까지 전 과정을 직접 담당하며 X 채널을 운영</p><p id="3d8e5be7-3b2c-800a-a464-fbee75500e24" class="" dir="auto"><strong>02｜CONTENT PRODUCTION</strong></p><p id="3d8e5be7-3b2c-8062-a1ca-e45329559eaf" class="" dir="auto">아티스트 사진·영상을 직접 촬영하고 Adobe Photoshop 등을 활용해 이미지와 영상을 편집·보정</p><p id="3d8e5be7-3b2c-805e-9621-e6cec3b035d4" class="" dir="auto"><strong>03｜FAN &amp; TREND INSIGHT</strong></p><p id="3d8e5be7-3b2c-80d6-91b7-dc2300cdaacc" class="" dir="auto">다양한 오프라인 팬 활동을 경험하며 실제 팬의 콘텐츠 소비와 현장 경험을 이해하고, 팬들의 관심사와 SNS 트렌드를 콘텐츠 제작에 반영</p><p id="3d8e5be7-3b2c-8094-9c96-c9eca92ea5b3" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8079-bc16-cd510e6704ab" class="" dir="auto">
+</p><h4 id="3d8e5be7-3b2c-80e6-a90c-cee56bfed7be" class="block-color-gray" data-notion-highlight="gray" dir="auto">영상 편집 툴을 활용하여 영상 편집</h4><p id="3d8e5be7-3b2c-8027-a954-ee0672ee19cf" class="" dir="auto"><a href="https://x.com/bringlight_0827/status/2050456748583195068?s=46">https://x.com/bringlight_0827/status/2050456748583195068?s=46</a></p><p id="3d8e5be7-3b2c-807d-8e8d-f04a4d8cdcf9" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-808b-b4f0-db363fdda7d9" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8021-b158-cba05711731a" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8019-b28c-f3f13bf96a64" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-806f-b06e-f8a82249e950" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-807b-9de5-ce9e58ce6e40" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8093-bc63-d6eba3b06fe5" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-800a-bd07-eb5fd93aad83" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8082-a8b9-e935fd5b5b07" class="" dir="auto"><a href="https://x.com/bringlight_0827/status/2085395139288354964?s=46">https://x.com/bringlight_0827/status/2085395139288354964?s=46</a> </p><p id="3d8e5be7-3b2c-808d-9e0d-c34d25c2a926" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8016-860e-e3eb198baa8c" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-80d0-96ea-eb4cd8a6b52e" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-806d-b208-eff31b1d42c9" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-809a-bddf-fb2535972ce9" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-8026-82c9-fe61c13ece63" class="" dir="auto">
+</p><p id="3d8e5be7-3b2c-800c-a252-dbbba3a2c3ce" class="" dir="auto">
+</p></div></div><hr id="de6e5be7-3b2c-8339-9440-81cb9642bcab" dir="auto"/><h2 id="59ae5be7-3b2c-82a0-806f-81b1316b3391" class="block-color-default" data-notion-highlight="default" dir="auto">▶ K-POP ARTIST MARKETING PROJECT</h2><h3 id="d2be5be7-3b2c-8245-8203-817fb34fd49c" class="block-color-gray" data-notion-highlight="gray" dir="auto">PAGE 01｜PROJECT OVERVIEW</h3><p id="3d9e5be7-3b2c-8032-9553-f36c4048e942" class="" dir="auto"><strong>K-POP ARTIST MARKETING PROJECT</strong></p><p id="3d9e5be7-3b2c-80aa-b685-df5a74bf415a" class="" dir="auto">아이디어를 실제 아티스트 마케팅으로 연결했습니다.</p><p id="3d9e5be7-3b2c-80ab-8bb2-c33dce725bb3" class="" dir="auto">
+</p><p id="3d9e5be7-3b2c-80ff-8df0-d871a748fb29" class="" dir="auto">K-POP Artist Birthday Support · Bus Stop Advertisement</p><p id="3d9e5be7-3b2c-808b-9f1f-e77f1b1350e7" class="" dir="auto">ADVERTISING PERIOD｜2025.08.17 – 2025.09.15</p><p id="3d9e5be7-3b2c-807b-ab58-e359f1042463" class="" dir="auto"><strong>MY ROLE：</strong></p><p id="3d9e5be7-3b2c-80e6-94c3-c944017907de" class="" dir="auto">Concept Planning · Copywriting · Photography · Retouching · Design QC · Partner Communication · Media Coordination</p><p id="3d9e5be7-3b2c-80a6-b3f7-d4856d3520fc" class="" dir="auto"><strong><span style="border-bottom:0.05em solid">IDEA → CONCEPT → CONTENT → DESIGN QC → AD COORDINATION → FINAL EXECUTION</span></strong></p><p id="3d9e5be7-3b2c-8068-af95-c798b39366f0" class="block-color-gray" data-notion-highlight="gray" dir="auto">아티스트의 생일을 기념하기 위한 버스정류장 광고 프로젝트를 직접 제안하고, 콘셉트 기획부터 콘텐츠 제작, 디자인 조율, 광고 업체와의 커뮤니케이션 및 최종 집행까지 전 과정을 직접 진행했습니다.</p><figure id="3d9e5be7-3b2c-803d-9369-fb32bd9f81b4" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6184.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6184.heic"><img style="width:4590px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6184.heic"/></a></figure><h3 id="3d9e5be7-3b2c-8024-9d93-e270e8cd0ccd" class="block-color-gray" data-notion-highlight="gray" dir="auto">PAGE 02｜MY ROLE &amp; EXECUTION</h3><p id="3d9e5be7-3b2c-80cb-aeb3-f46e01d0e171" class="" dir="auto"><strong>FROM CONCEPT TO EXECUTION</strong></p><p id="3d9e5be7-3b2c-809a-958e-d9ce083d3179" class="" dir="auto">기획부터 최종 광고 집행까지 직접 연결했습니다.</p><p id="3d9e5be7-3b2c-8080-89aa-fed15b664138" class="" dir="auto"><strong>01｜CONCEPT &amp; CONTENT</strong></p><p id="3d9e5be7-3b2c-8017-8236-d3186ff296e8" class="" dir="auto">광고 콘셉트와 콘텐츠를 직접 기획·제작</p><figure id="3d9e5be7-3b2c-806b-b451-eccdb9654180" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6171.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6171.heic"><img style="width:4590px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6171.heic"/></a></figure><p id="3d9e5be7-3b2c-804c-9311-fe70af60ef99" class="" dir="auto"><strong>02｜DESIGN DIRECTION &amp; QC</strong></p><p id="3d9e5be7-3b2c-805a-83c2-cb451fa04f38" class="" dir="auto">디자인 방향을 전달하고 최종 결과물을 검수</p><figure id="3d9e5be7-3b2c-8070-97f9-d5801bb3ecd8" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6179.png" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6179.png"><img style="width:704px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6179.png"/></a></figure><p id="3d9e5be7-3b2c-8096-8d19-f1e384d8941f" class="" dir="auto"><strong>03｜ADVERTISING PARTNER</strong></p><p id="3d9e5be7-3b2c-8069-a01f-da1bed473c9c" class="" dir="auto">광고 업체와 직접 소통하며 집행 조건을 조율</p><figure id="3d9e5be7-3b2c-802e-b6db-c7cb2209725c" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6182.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6182.heic"><img style="width:4590px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6182.heic"/></a></figure><p id="3d9e5be7-3b2c-809a-9d25-d34d41fade32" class="" dir="auto"><strong>04｜FINAL EXECUTION</strong></p><p id="3d9e5be7-3b2c-80ad-ac95-c577ea178223" class="" dir="auto">최종 광고물을 직접 전달하고 실제 집행까지 확인</p><figure id="3d9e5be7-3b2c-8052-b447-e15854c15fd3" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6183.heic" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6183.heic"><img style="width:7884px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/IMG_6183.heic"/></a></figure><hr id="127e5be7-3b2c-82f3-98a1-01969ef7c3a3" dir="auto"/><h2 id="2b8e5be7-3b2c-82b1-b38f-014458dd7664" class="" dir="auto">▶ KOREAN–CHINESE CONTENT TRANSLATION</h2><h4 id="3e1e5be7-3b2c-8089-aa6b-d86458097c47" class="block-color-gray" data-notion-highlight="gray" dir="auto">언어를 넘어, 콘텐츠의 의미와 감정을 전달합니다.</h4><p id="3e1e5be7-3b2c-802f-9151-c43afdcaf60a" class="" dir="auto">한국어 콘텐츠를 중국어로 번역하고 자막을 제작하며, 원문의 의미와 맥락을 중국어 이용자에게 자연스럽게 전달하는 작업을 수행했습니다.</p><h3 id="3e1e5be7-3b2c-80e1-9724-f49f2a700196" class="" dir="auto">TRANSLATION &amp; SUBTITLE PRODUCTION</h3><ul id="3e1e5be7-3b2c-803d-85f6-c0ab70fbcb33" class="bulleted-list" dir="auto"><li style="list-style-type:disc">K-POP 관련 한국어 콘텐츠의 중국어 번역 및 자막 제작</li></ul><ul id="3e1e5be7-3b2c-808b-ad44-e871f9f56c4a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">콘텐츠의 맥락과 표현 의도를 고려한 자연스러운 중국어 현지화</li></ul><ul id="3e1e5be7-3b2c-80eb-b493-dea718d2a2d2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">번역 및 자막 작업 50건 이상, 누적 약 900분 수행</li></ul><p id="3e1e5be7-3b2c-805d-8f60-df24f10edf5d" class="block-color-gray" data-notion-highlight="gray" dir="auto"><strong>TRANSLATION WORKFLOW</strong></p><figure id="3e1e5be7-3b2c-8029-b8d5-c2b47e6496cf" class="image" data-notion-image="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/7494.jpg" dir="ltr"><a href="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/7494.jpg"><img style="width:704px" src="%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4%20-%20LI%20SILIN/7494.jpg"/></a><figcaption>Korean-to-Chinese Translation &amp; Subtitle Production</figcaption></figure><table id="3e1e5be7-3b2c-8054-a925-c24f41809c76" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3e1e5be7-3b2c-801b-bf3f-c77e5d4eac43" dir="ltr"><th id="weYe" class="simple-table-header-color simple-table-header" style="width:189px">50+</th><th id="jnH`" class="simple-table-header-color simple-table-header" style="width:250px">900 MIN</th><th id="VLn}" class="simple-table-header-color simple-table-header" style="width:263px">KOR → CHN</th></tr></thead><tbody><tr id="3e1e5be7-3b2c-80a5-8dde-e996c7e10d98" dir="ltr"><td id="weYe" class="" style="width:189px">번역 프로젝트</td><td id="jnH`" class="" style="width:250px">누적 자막 작업 시간</td><td id="VLn}" class="" style="width:263px">한국어 → 중국어</td></tr></tbody></table><h4 id="3e1e5be7-3b2c-806f-9cad-c02305e99829" class="block-color-gray" data-notion-highlight="gray" dir="auto">ON-SITE COMMUNICATION</h4><p id="3e1e5be7-3b2c-80a6-b0a6-f89e597484de" class="" dir="auto">오프라인 K-POP 팬 이벤트에서 한국 스태프와 중국 팬 간 통역을 지원하며, 현장 안내와 요청 사항이 원활하게 전달될 수 있도록 소통을 도왔습니다.</p><hr id="858e5be7-3b2c-826c-a37f-816952a379fa" dir="auto"/><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="3e1e5be7-3b2c-803e-bd7a-dc490fc09113" dir="ltr"><div style="width:100%"><h1 id="3e1e5be7-3b2c-80a1-be96-dc551d4bbe40" class="" dir="auto">Thanks For Watching</h1><h4 id="3e1e5be7-3b2c-806b-8641-fb4d71180fdd" class="block-color-default_background" data-notion-highlight="default_background" dir="auto">LI SILIN | 이사림</h4></div></aside><hr id="00ce5be7-3b2c-8346-87fa-01295029c8f0" dir="auto"/><p id="3e1e5be7-3b2c-8043-aaa9-f43dc69036d4" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
